@@ -1,0 +1,61 @@
+@import '../../../scss/_variables.scss';
+@import '../../../scss/_config.scss';
+
+
+.box-barve {
+    @include flex-center;
+    padding-top: 3rem;
+    gap: 1.2rem 3rem;
+}
+
+
+@media only screen and (max-width:450px) {
+
+    .barve-container {
+        @include flex-center;
+        padding-top: 4rem;
+        gap: 1.5rem 0rem;
+        flex-direction: column;
+    
+        .box-mobile {
+            @include flex-center;
+            flex-wrap: nowrap;
+            gap: 1rem 0.5rem;
+            
+            .box-barve {
+                padding: 0rem 1rem;
+                background-color: rgb(237, 237, 194);
+                border-radius: 5px;
+                width: 10rem;
+                height: 15rem;
+                box-shadow: 0px 0px 20px 10px $sixthColor;
+                border-radius: 10px;
+
+                .end-sporocilo {
+                    color: $firstColor;
+                    font-weight: bold;
+                    font-size: 1.5rem;
+                }
+            }
+
+            .prev, .next {
+                color: $shadowColor;
+                cursor: pointer;
+                font-size: 1.5rem;
+                font-weight: bold;
+                width: 2rem;
+                height: 2rem;
+                border-radius: 50px;
+                border: 1px solid $shadowColor;
+                background-color: $activeColor;
+                padding: 0px;
+                @include transition-ease;
+
+                &:hover {
+                    color: $secondColor;
+                    border-color: $fifthColor;
+                }
+            }
+        }
+    }
+}

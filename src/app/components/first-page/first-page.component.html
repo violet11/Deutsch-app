@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="home-container">
+        <button class="btn" 
+            *ngFor="let button of buttons, let i = index" 
+            [routerLink]=button.routerLink
+            [disabled]="i > 2"
+            [hidden]="i == 0">
+            {{ button.name }}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<header>
+	<div class="top_header">
+		<div class="title" (click)="onTitleClick()">
+			<a [routerLink]="links[0].routerLink"
+				routerLinkActive="active" ariaCurrentWhenActive="page" #rla="routerLinkActive"
+				[routerLinkActiveOptions]="{exact:true}">
+				{{ title }}
+			</a>
+		</div>
+		<div id="vpis">
+			<a href="registracija.html">Vpis</a>
+		</div>
+	</div>
+	<nav [className]="navClass" (click)="onClick()">
+		<div class="nav" *ngIf="!rla.isActive">
+			<a class="nav-item nav-link"
+				*ngFor="let link of links, let i = index"
+				[routerLink]="link.routerLink"
+				routerLinkActive="active" 
+				ariaCurrentWhenActive="page"
+				[routerLinkActiveOptions]="i == 0 ? {exact:true} : {exact:false}"
+				[hidden]="i > 2">
+				{{ link.name }}
+			</a>
+		</div>
+	</nav>
+	<div class="menu-btn" *ngIf="!rla.isActive" (click)="onClick()">
+		<span [className]="burgerClass"></span>
+	</div>
+</header>

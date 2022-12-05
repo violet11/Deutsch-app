@@ -1,0 +1,54 @@
+@import '../../../scss/_variables.scss';
+@import '../../../scss/_config.scss';
+
+.stevci {
+    @include flex-center;
+    flex-direction: column;
+    z-index: 1;
+    border-radius: 10px;
+
+    .stevec {
+        @include flex-center;
+        flex-direction: column;
+        padding: 0.2rem;
+
+        .stevilo {
+            color: $activeColor;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: $border-radius;
+            background-color: $stevecColorDark;
+            @include circle(2rem);
+            @include flex-center;
+        }
+
+        .stevilo-tekst {
+            font-size: 0.6rem;
+            color: black;
+        }
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .stevci {
+        flex-flow: row nowrap;
+
+        .stevec {
+
+            .stevilo {
+                font-size: 0.5rem;
+                height: 1.4rem;
+                width: 1.4rem;
+                border-radius: $border-radius;
+                color: $activeColor;
+            }
+
+            .stevilo-tekst {
+                width: 5em;
+                font-weight: 400;
+                font-size: 0.6em;
+                line-height: 1.5em;
+            }
+        }
+    }
+}

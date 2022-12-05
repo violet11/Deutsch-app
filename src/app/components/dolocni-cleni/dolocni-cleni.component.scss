@@ -1,0 +1,268 @@
+@import '../../../scss/_variables.scss';
+@import '../../../scss/_config.scss';
+
+.container {
+    padding: 3rem 0.5rem;
+    background-color: #bcd1b2;
+
+    .main-box {
+        @include flex-center;
+        position: relative;
+        height: 14.4rem;
+        margin: 1rem 0.5rem 0rem 0.5rem;
+
+        .container-random {
+            display: inline-grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.2rem 2rem;
+            padding: 1rem;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+
+            .rBeseda-box {
+                height: 2.4rem;
+                width: 7rem;
+        
+                .rBeseda {
+                    width: fit-content;
+                    margin: auto;
+                    @include rBesedaStyle;
+
+                    &.hide {
+                        visibility: hidden;
+                    }
+                }
+
+                .rBorder {
+                    border: none;
+                    background-color: transparent;
+                }
+            }
+        }
+        
+        .end-box {
+            width: 70%;
+
+            .game-over {
+                font-family: "Chango-Regular";
+                color: red;
+                font-size: 5rem;
+                padding-block-end: 1rem;
+            }
+
+            .end-text {
+                font-size: 2em;
+                font-weight: bold;
+                color: $primaryColor;
+                color: black;
+                line-height: 3.5rem;
+            }
+        }
+    }
+
+    .user-container {
+        padding:  40px 25px 20px 25px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        width: 90%;
+        margin: auto;
+        justify-content: center;
+
+        .clen-box {
+            border-radius: 1rem;
+            background-color: rgb(243, 243, 202);
+            @include shadow($shadowColor);
+
+            .ime-clena {
+                font-size: 1.7rem;
+                padding: 0.7rem;
+                padding-block-end: 1rem;
+                font-family: Tourney-VariableFont_wdth, Arial, Helvetica, sans-serif;
+                margin: auto;
+                border-top-left-radius: 1rem;
+                border-top-right-radius: 1rem;
+                @extend %colorShadow;
+
+                &::before {
+                    content: "..::: ";
+                }
+
+                &::after {
+                    content: " :::..";
+                }
+            }
+
+            .user-box {
+                min-height: 200px;
+                width: 100%;
+                border-radius: 1em;
+                @include flex-center;
+                gap: 5px;
+                padding: 17px;
+                align-content: center;
+                overflow: hidden;
+    
+                .user-beseda {
+                    @include rBesedaStyle;
+                }
+    
+                .pravilna {
+                    color: #efefd1;
+                    @extend %clenGradient;
+                }
+            }
+        }
+    }
+}
+
+.cdk-drag-preview{
+    @include rBesedaStyle;
+}
+
+.cdk-drag-animating {
+    transition: transform 250ms ease-in-out;
+}
+
+.aside {
+    position: absolute;
+    top: 1rem;
+    right: 0rem;
+    @include flex-center;
+    gap: 1rem;
+    flex-direction: column;
+
+    .gumbi {
+        padding: 0rem;
+
+        button {
+            font-size: 0.7rem;
+            @include circle(2.9rem);
+            @include gradient(rgb(194, 182, 198), rgb(189, 143, 190));
+            color: $primaryColor;
+            border: 1px solid $thirdColor;
+            line-height: 0.9rem;
+            font-weight: bold;
+            box-shadow: none;
+
+            &:hover {
+                @include gradient(rgb(210, 169, 195), rgb(198, 87, 172));
+                @include transition-ease;
+            }
+
+            &:active {
+                @include gradient(rgb(211, 138, 214), rgb(144, 41, 148));
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .container {
+        padding-top: 4rem;
+
+        .main-box {
+            height: 8rem;
+
+            .container-random {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.2rem 0.4rem;
+
+                .rBeseda-box {
+                    width: 4rem;
+
+                    .rBeseda {
+                        @include rBesedaStyleMobile;
+                    }
+                }
+            }
+
+            .end-box {
+
+                .game-over {
+                    font-size: 1.2rem;
+                    padding-block-end: 0rem;
+                }
+
+                .end-text {
+                    font-size: 0.8rem;
+                    line-height: 1.5em;
+                    padding: 1%;
+                }
+            }
+            
+            .aside {
+                top: -4.4rem;
+                right: auto;
+                flex-direction: row-reverse;
+                flex-wrap: nowrap;
+                box-shadow: 0px 5px 10px -10px $thirdColor;
+                border-radius: 10px;
+                padding: 0.4rem;
+    
+                .gumbi button {
+                    font-size: 0.5rem;
+                    height: 2rem;
+                    width: 2rem;
+                    line-height: 0.5rem;
+                    font-weight: normal;
+                    @include gradient($sixthColor, $sixthColorDark);
+
+                    &:hover {
+                        @include gradient($sixthColorDark, $stevecColorDark);
+                    }
+
+                    &:active {
+                        @include gradient($sixthColorLight, $stevecColorDark);
+                    }
+                }
+            }
+        }
+
+        .user-container {
+            padding: 20px 0px;
+            width: 100%;
+            gap: 0.5em;
+
+            .clen-box {
+
+                .ime-clena {
+                    font-size: 1rem;
+                    padding: 0.5rem;
+
+                    &::before {
+                        content: "";
+                    }
+
+                    &::after {
+                        content: "";
+                    }
+                }
+
+                .user-box {
+                    padding: 0.7rem 0.2rem;
+                    border-width: 1px;
+                    align-content: flex-start;
+
+                    .user-beseda {
+                        @include rBesedaStyleMobile;
+                        
+                        &.pravilna {
+                            border-color: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .cdk-drag-preview {
+        @include rBesedaStyleMobile;
+    }
+
+    .drag-placeholder {
+        width: 3rem;
+        height: 1.5rem;
+    }
+}

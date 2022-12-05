@@ -1,0 +1,46 @@
+@import '../../../scss/_variables.scss';
+@import '../../../scss/_config.scss';
+
+.container {
+    background: linear-gradient(to bottom, $primaryColor, $firstColor);
+}
+
+.home-container {
+    height: 500px;
+    margin: 0px auto;
+    @include flex-center;
+    align-content: center;
+    gap: 100px 70px;
+    padding: 0rem 2.5rem;
+
+    .btn {
+        color: $activeColor;
+        font-weight: bold;
+        padding: 1rem;
+        font-size: 1.2rem;
+        border: 1px solid $thirdColor;
+        border-radius: $border-radius;
+    }
+
+    .btn:hover {
+        @include transition-ease;
+        background-color: $firstColor;
+        border-color: $firstColor;
+    }
+}
+
+@media only screen and (max-width:450px) {
+
+    .home-container {
+        gap: 1.5em 1.5em;
+        width: 100%;
+        height: auto;
+        padding: 17% 3%;
+        
+        .btn {
+            font-size: 0.7rem;
+            padding: 0.7rem;
+            font-weight: normal;
+        }
+    }
+}

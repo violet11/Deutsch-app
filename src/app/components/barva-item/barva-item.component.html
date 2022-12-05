@@ -1,0 +1,16 @@
+<div class="box">
+    <div class="resitve">
+        <span [hidden]="!resitve">{{ barveBox.color }}</span>
+    </div>
+    <div class="barvniKrog" [style.background]="barveBox.hexValue">
+    </div>
+    <input type="text" class="form-control barveInput"
+        [(ngModel)]=inputValue
+        (change)="onChange()"
+        autofocus/>
+    <div class="feedback">
+        <span *ngIf="!mobileScreen" [hidden]="(!inputLength)">{{ feedbackText }}</span>
+        <span *ngIf="mobileScreen" [hidden]="(!nextClick)">{{ feedbackText }}</span>
+    </div>
+</div>
+

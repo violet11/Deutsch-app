@@ -1,0 +1,61 @@
+@import '../../../scss/_variables.scss';
+@import '../../../scss/_config.scss';
+
+.box {
+    width: 87px;
+    @include flex-center;
+    flex-direction: column;
+    gap: 1rem;
+
+    .resitve {
+        height: 1.2rem;
+    }
+
+    .barvniKrog { 
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        box-shadow: 15px 4px 10px -5px $shadowColor;
+        border: 1px solid $shadowColor;
+    }
+
+    .barveInput {
+        border: 1px solid $thirdColor;
+        border-radius: 1.8em;
+        background-color: $activeColor;
+        font-size: 14px;
+
+        &:focus {
+            box-shadow: 0px 0px 7px 0px $thirdColor;
+        }
+
+        &:hover {
+            box-shadow: 0px 0px 5px 0px $thirdColor;
+        }
+     }
+            
+    .feedback {
+        height: 1rem;
+
+        &span {
+            font-size: 14px;
+        }
+    }
+}
+
+
+@media only screen and (max-width:450px) {
+
+    .box {
+        width: fit-content;
+
+        .barvniKrog { 
+            height: 5.9rem;
+            width: 5.9rem;
+        }
+
+        .barveInput {
+            width: 7em;
+        }
+    }
+}

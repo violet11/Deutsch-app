@@ -1,0 +1,96 @@
+@charset "UTF-8";
+
+@import 'scss/_variables.scss';
+@import 'scss/_config.scss';
+
+@font-face {
+    font-family: "Satisfy-Regular";
+    src: local("Satisfy-Regular"), url(./assets/fonts/Satisfy-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Cabin_SemiCondensed-Regular";
+    src: local("Cabin_SemiCondensed-Regular"), url(./assets/fonts/Cabin_SemiCondensed-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Tourney-VariableFont_wdth,wght";
+    src: local("Tourney-VariableFont_wdth,wght"), url(./assets/fonts/Tourney-VariableFont_wdth,wght.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "BungeeShade-Regular";
+    src: local("BungeeShade-Regular"), url(./assets/fonts/BungeeShade-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "Chango-Regular";
+    src: local("Chango-Regular"), url(./assets/fonts/Chango-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "KosugiMaru-Regular";
+    src: local("KosugiMaru-Regular"), url(./assets/fonts/KosugiMaru-Regular.ttf) format("truetype");
+}
+
+* {
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: $primaryColor; 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    background-color: $mainContainerColor;
+    text-align: center;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    .gumbi {
+        @include flex-center;
+        padding: 2rem;
+
+        button {
+            @include buttonStyle;
+        }
+    }
+
+    &.navodilo {
+        @include flex-center;
+        height: 400px;
+        @include gradient($mainContainerColor, $fifthColor);
+    }
+}
+
+@media only screen and (max-width:450px) {
+
+    body {
+        background-color: $mainContainerColor;
+        overflow: hidden;
+    }
+
+    .navbar-header a {
+        font-size: 1.3em;
+    }
+
+    .container {
+        width: 100%;
+        border-radius: 0px;
+        border-bottom: 1px solid $thirdColor;
+
+        .gumbi {
+            padding: 1rem 2rem 3.5rem 2rem;
+            gap: 1.7rem 0.7rem;
+
+            button {
+                font-size: 0.7rem;
+            }
+        }
+    }
+}

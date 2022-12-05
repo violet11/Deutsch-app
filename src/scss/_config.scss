@@ -1,0 +1,82 @@
+@import '_variables.scss';
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    flex-wrap: wrap;
+}
+
+@mixin circle($num) {
+    height: $num;
+    width: $num;
+    border-radius: 50%;
+}
+
+@mixin transition-ease {
+    transition: all 1s ease-in-out;
+}
+
+@mixin gradient( $color1, $color2) {
+    background: linear-gradient(to right, $color1, $color2);
+}
+
+@mixin shadow($color) {
+    box-shadow: 0px 2px 5px 0px $color;
+}
+
+$clenMainColorList: (der: $derBlue, die: $dieRed, das: $dasYellow);
+$mainColorValues: map-values($clenMainColorList);
+$clenBrightColors: ($derBlueBrighter, $dieRedBrighter, $dasYellowBrighter);
+
+%clenGradient {
+    @for $i from 0 to length($clenMainColorList) {
+        &.#{nth(map-keys($clenMainColorList), $i + 1)} {
+            @include gradient(nth($clenBrightColors, $i + 1), nth($mainColorValues, $i + 1));
+        }
+    }
+}
+
+%colorShadow {
+    @for $i from 0 to length($clenMainColorList) {
+        &.#{nth(map-keys($clenMainColorList), $i + 1)} {
+            color: nth($mainColorValues, $i + 1);
+            box-shadow: 0px 10px 20px -15px (nth($mainColorValues, $i + 1));
+        }
+    }
+}
+
+@mixin buttonStyle {
+    padding: 0.5em;
+    border-radius: 10px;
+    box-shadow: 0px 15px 5px -10px $shadowColor;
+    background-color: $primaryColor;
+    color: $mainContainerColor;
+    font-size: 14px;
+    border: none;
+
+    &:hover {
+        color: $activeColor;
+        box-shadow: none;
+        @include transition-ease;
+    }
+}
+
+@mixin rBesedaStyle {
+    border-radius: $border-radius;
+    border: 1px solid $fourthColor;
+    cursor: grab;
+    padding: 8px;
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: black;
+    background-color: rgb(243, 243, 202);
+    @include shadow($shadowColor);
+}
+
+@mixin rBesedaStyleMobile {
+    font-size: 0.6rem;
+    padding: 0.2rem 0.3rem;
+}

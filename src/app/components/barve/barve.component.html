@@ -1,0 +1,47 @@
+<div [ngClass]="changeClass">
+    <app-navodilo 
+        [navodilo]="navodilo" 
+        (startEvent)="startValue($event)" 
+        *ngIf="!startGame">
+    </app-navodilo>
+    <div class="barve-container" *ngIf="startGame">
+        <div class="box-mobile">
+            <button class="prev" 
+                (click)="clickBack()" 
+                *ngIf="mobileScreen" 
+                [disabled]="endColors">
+                &#10094; 
+            </button>
+            <div class="box-barve">
+                <div class="end-sporocilo" 
+                    *ngIf="mobileScreen && endColors">
+                    {{ sporocilo }}
+                </div>
+                <app-barva-item *ngFor="let box of colorBoxes; let i = index"
+                    [hidden]="endColors"
+                    (odgovor)="preveriOdgovor($event)"
+                    [resitve]="prikaziResitve"
+                    [inputValue]="inputValue"
+                    [nextClick]="nextClick"
+                    [barveBox]="box">
+                </app-barva-item>
+            </div>
+            <button class="next" 
+                (click)="clickNext()" 
+                *ngIf="mobileScreen" 
+                [disabled]="endColors">
+                &#10095;
+            </button>
+        </div>
+        <div class="gumbi">
+            <button type="button" 
+                (click)="resitveToggle()">
+                {{ mobileScreen ? "Rešitev": "Rešitve" }}
+            </button>
+            <button type="button" 
+                (click)="ponastaviVajo()">
+                {{ resetBtn }}
+            </button>
+        </div>
+    </div>
+</div>

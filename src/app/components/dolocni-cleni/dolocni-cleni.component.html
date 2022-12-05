@@ -1,0 +1,61 @@
+<div [className]="startClass()" cdkDropListGroup>
+    <app-navodilo 
+        [navodilo]="navodilo" 
+        (startEvent)="startValue($event)" 
+        *ngIf="!startGame">
+    </app-navodilo>
+    <div *ngIf="startGame">
+        <div class="main-box">
+            <div class="container-random"
+                *ngIf="stevci[0].stevilo > 0"
+                cdkDropList
+                [cdkDropListData]="dolocniCleniData.seznamTrenutni"
+                (cdkDropListDropped)="drop($event, 0)"
+                [cdkDropListEnterPredicate]="noReturnPredicate"
+                cdkDropListSortingDisabled>
+                <div class="rBeseda-box" *ngFor="let beseda of dolocniCleniData.seznamTrenutni">
+                    <div [ngClass]="hideShowClass(beseda)"
+                        [cdkDragData]="beseda" 
+                        cdkDrag>
+                        <div class="drag-placeholder" *cdkDragPlaceholder></div>
+                            {{ beseda }}
+                    </div>
+                </div>
+            </div>
+            <div class="aside">
+                <div class="gumbi">
+                    <button type="button" (click)="ponastavi()">Nova igra</button>
+                </div>
+                <app-stevec
+                    [stevci]="stevci">
+                </app-stevec>
+            </div>
+            <div class="end-box" *ngIf="stevci[0].stevilo == 0">
+                <h1 class="game-over" *ngIf="endSporocilo() !== delno"> {{ endNaslov() }} </h1>
+                <h1 class="end-text">
+                    {{ endSporocilo() }}
+                </h1>
+            </div>
+        </div>
+        <div class="user-container">
+            <div class="clen-box {{ seznamBesed[i].clen }}" 
+                *ngFor="let clen of dolocniCleniData.box; let i = index">
+                <div class="ime-clena {{ seznamBesed[i].clen }}">
+                    <b>{{ seznamBesed[i].clen }}</b>
+                </div>
+                <div id="clen" class="user-box"
+                    cdkDropList
+                    [cdkDropListData]="clen"
+                    (cdkDropListDropped)="drop($event, i)"
+                    cdkDropListSortingDisabled>
+                    <div *ngFor="let beseda of clen"
+                        [className]="rezultat.matchingClass(beseda, i)"
+                        [cdkDragData]="beseda" cdkDrag
+                        [cdkDragDisabled]="konecPremikov(beseda, i)">
+                        {{ beseda }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
