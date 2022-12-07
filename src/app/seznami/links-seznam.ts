@@ -4,39 +4,39 @@ export let links = [
       name: "Domov"
     },
     {
-      routerLink: "./dolocni-cleni",
+      routerLink: "/dolocni-cleni",
       name: "der die das"
     },
     {
-      routerLink: "./barve",
+      routerLink: "/barve",
       name: "Farben"
     },
     {
-      routerLink: "./pridevniki",
+      routerLink: "/pridevniki",
       name: "Adjective"
     },
     {
-      routerLink: "./trennbare-verben",
+      routerLink: "/trennbare-verben",
       name: "Trennbare Verben"
     },
     {
-      routerLink: "./cas",
+      routerLink: "/cas",
       name: "Zeit"
     },
     {
-      routerLink: "./mnozina",
+      routerLink: "/mnozina",
       name: "Plural"
     },
     {
-      routerLink: "./svojilni-zaimki",
+      routerLink: "/svojilni-zaimki",
       name: "Possesivpronomen"
     },
     {
-      routerLink: "./druzina",
+      routerLink: "/druzina",
       name: "Familie"
     },
     {
-      routerLink: "./glagoli",
+      routerLink: "/glagoli",
       name: "Verben"
     }
   ]
