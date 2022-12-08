@@ -4,11 +4,11 @@ export let links = [
       name: "Domov"
     },
     {
-      routerLink: "dolocni-cleni",
+      routerLink: "../dolocni-cleni",
       name: "der die das"
     },
     {
-      routerLink: "barve",
+      routerLink: "../barve",
       name: "Farben"
     },
     {
