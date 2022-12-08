@@ -36,17 +36,14 @@
         .stevec {
 
             .stevilo {
-                font-size: 0.5rem;
-                height: 1.4rem;
-                width: 1.4rem;
-                border-radius: $border-radius;
-                color: $activeColor;
+                font-size: 0.7rem;
+                @include circle(1.7rem);
             }
 
             .stevilo-tekst {
                 width: 5em;
                 font-weight: 400;
-                font-size: 0.6em;
+                font-size: 0.7rem;
                 line-height: 1.5em;
             }
         }

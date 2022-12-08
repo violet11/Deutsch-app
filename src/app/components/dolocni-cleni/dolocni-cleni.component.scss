@@ -167,13 +167,13 @@
 
             .container-random {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 1.2rem 0.4rem;
+                gap: 1.2rem 1.5rem;
 
                 .rBeseda-box {
                     width: 4rem;
 
                     .rBeseda {
-                        @include rBesedaStyleMobile;
+                        @include rBesedaMobile;
                     }
                 }
             }
@@ -202,11 +202,9 @@
                 padding: 0.4rem;
     
                 .gumbi button {
-                    font-size: 0.5rem;
-                    height: 2rem;
-                    width: 2rem;
-                    line-height: 0.5rem;
-                    font-weight: normal;
+                    font-size: 0.6rem;
+                    @include circle(2.5rem);
+                    line-height: 0.7rem;
                     @include gradient($sixthColor, $sixthColorDark);
 
                     &:hover {
@@ -246,7 +244,7 @@
                     align-content: flex-start;
 
                     .user-beseda {
-                        @include rBesedaStyleMobile;
+                        @include userBesedaMobile;
                         
                         &.pravilna {
                             border-color: transparent;
@@ -258,7 +256,7 @@
     }
 
     .cdk-drag-preview {
-        @include rBesedaStyleMobile;
+        @include rBesedaMobile;
     }
 
     .drag-placeholder {

@@ -76,7 +76,12 @@ $clenBrightColors: ($derBlueBrighter, $dieRedBrighter, $dasYellowBrighter);
     @include shadow($shadowColor);
 }
 
-@mixin rBesedaStyleMobile {
+@mixin rBesedaMobile {
+    font-size: 0.8rem;
+    padding: 0.4rem;
+}
+
+@mixin userBesedaMobile {
     font-size: 0.6rem;
     padding: 0.2rem 0.3rem;
 }
