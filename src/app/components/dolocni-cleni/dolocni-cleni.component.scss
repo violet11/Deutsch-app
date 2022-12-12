@@ -160,16 +160,17 @@
 
 @media only screen and (max-width:450px) {
     .container {
-        padding-top: 4rem;
+            padding-top: 4rem;
 
         .main-box {
             height: 8rem;
 
             .container-random {
                 grid-template-columns: repeat(3, 1fr);
+                gap: 1rem 0.5rem;
 
                 .rBeseda-box {
-                    width: 4rem;
+                    width: 6rem;
 
                     .rBeseda {
                         @include rBesedaMobile;
