@@ -4,7 +4,6 @@
 
 .box-barve {
     @include flex-center;
-    padding-top: 3rem;
     gap: 1.2rem 3rem;
 }
 
@@ -13,7 +12,6 @@
 
     .barve-container {
         @include flex-center;
-        padding-top: 4rem;
         gap: 1.5rem 0rem;
         flex-direction: column;
     

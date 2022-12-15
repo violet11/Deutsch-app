@@ -28,7 +28,7 @@ export class BarveComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  get changeClass(): string { return this.startService.changeClass(this.startGame); }
+  get startClass(): string { return this.startService.changeClass(this.startGame); }
 
   get endColors() { return this.index == barve.length; }
 

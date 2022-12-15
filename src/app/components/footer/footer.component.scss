@@ -3,10 +3,13 @@
 footer {
     text-align: center;
     background-color: $primaryColor;
+
+    .footer-text {
+        padding: 1.5rem;
+    }
     
     .misel {
         color: $fifthColor;
-        padding: 1.5rem;
     }
 
     .copyright {
@@ -18,7 +21,7 @@ footer {
 @media only screen and (max-width:450px) {
 
     footer {
-        background-color: $mainContainerColor;
+        // background-color: $mainContainerColor;
         padding-top: 10%;
     }
 }

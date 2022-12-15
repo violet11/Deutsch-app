@@ -1,5 +1,5 @@
-<div [className]="startClass()" cdkDropListGroup>
-    <app-navodilo 
+<div [ngClass]="startClass()" cdkDropListGroup>
+    <app-navodilo
         [navodilo]="navodilo" 
         (startEvent)="startValue($event)" 
         *ngIf="!startGame">

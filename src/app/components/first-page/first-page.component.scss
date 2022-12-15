@@ -7,10 +7,9 @@
 
 .home-container {
     height: 500px;
-    margin: 0px auto;
     @include flex-center;
     align-content: center;
-    gap: 100px 70px;
+    gap: 6.5rem 3rem;
     padding: 0rem 2.5rem;
 
     .btn {
@@ -32,13 +31,11 @@
 @media only screen and (max-width:450px) {
 
     .home-container {
-        gap: 1.5em 1.5em;
-        width: 100%;
-        // height: auto;
+        gap: 2.5rem 1.8rem;
         padding: 17% 3%;
         
         .btn {
-            font-size: 0.7rem;
+            font-size: 1rem;
             padding: 0.7rem;
             font-weight: normal;
         }

@@ -2,7 +2,6 @@
 @import '../../../scss/_config.scss';
 
 .container {
-    padding: 3rem 0.5rem;
     background-color: #bcd1b2;
 
     .main-box {
@@ -172,7 +171,6 @@
 
 @media only screen and (max-width:450px) {
     .container {
-            padding-top: 4rem;
 
         .main-box {
             height: 12rem;
