@@ -72,6 +72,7 @@ body {
 
     body {
         background-color: $mainContainerColor;
+        overflow-x: hidden;
     }
 
     .navbar-header a {
