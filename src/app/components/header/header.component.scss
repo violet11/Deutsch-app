@@ -137,11 +137,11 @@ header {
                     background-color: transparent;
     
                     &::before {
-                        transform: rotate(45deg) translate(3.5px, 7px);
+                        transform: rotate(45deg) translate(2.5px, 7px);
                     }
     
                     &::after {
-                        transform: rotate(-45deg) translate(2.5px, -6px);
+                        transform: rotate(-45deg) translate(2.5px, -7px);
                     }
                 }
             }

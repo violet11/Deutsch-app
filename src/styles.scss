@@ -95,9 +95,8 @@ body {
         }
 
         &.navodilo {
-            align-items: flex-start;
             height: 100vh;
-            padding-top: 30%;
+            padding-block-start: 40%;
         }
     }
 }
