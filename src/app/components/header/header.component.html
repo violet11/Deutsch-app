@@ -1,9 +1,9 @@
-<header>
+<header [ngClass]="headerClass(rla)">
 	<div class="top_header">
-		<div class="title" (click)="onTitleClick()">
+		<div class="title" [hidden]="hideTitle(rla)" (click)="onTitleClick()">
 			<a [routerLink]="links[0].routerLink"
 				routerLinkActive="active" ariaCurrentWhenActive="page" #rla="routerLinkActive"
-				[routerLinkActiveOptions]="{exact:true}">
+				[routerLinkActiveOptions]="{exact:true}" >
 				{{ title }}
 			</a>
 		</div>
@@ -11,7 +11,7 @@
 			<a href="registracija.html">Vpis</a>
 		</div>
 	</div>
-	<nav [className]="navClass" (click)="onClick()">
+	<nav [ngClass]="navClass" (click)="onClick()">
 		<div class="nav" *ngIf="!rla.isActive">
 			<a class="nav-item nav-link"
 				*ngFor="let link of links, let i = index"
@@ -25,6 +25,6 @@
 		</div>
 	</nav>
 	<div class="menu-btn" *ngIf="!rla.isActive" (click)="onClick()">
-		<span [className]="burgerClass"></span>
+		<span [ngClass]="burgerClass"></span>
 	</div>
 </header>

@@ -55,7 +55,6 @@ body {
 
     .gumbi {
         @include flex-center;
-        padding: 2rem;
 
         button {
             @include buttonStyle;
@@ -88,16 +87,17 @@ body {
         padding-top: 4rem;
 
         .gumbi {
-            padding: 1rem 2rem 3.5rem 2rem;
-            gap: 1.7rem 0.7rem;
+            gap: 0rem 1rem;
 
             button {
-                font-size: 0.7rem;
+                font-size: 0.8rem;
             }
         }
 
         &.navodilo {
+            align-items: flex-start;
             height: 100vh;
+            padding-top: 30%;
         }
     }
 }

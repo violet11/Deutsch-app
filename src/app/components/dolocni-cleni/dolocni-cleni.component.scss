@@ -171,13 +171,15 @@
 
 @media only screen and (max-width:450px) {
     .container {
+        height: fit-content;
 
         .main-box {
             height: 12rem;
 
             .container-random {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 1rem 0.5rem;
+                gap: 2rem 0.5rem;
+                padding-block-end: 0.3rem;
 
                 .rBeseda-box {
                     width: 6rem;
@@ -229,7 +231,7 @@
         }
 
         .user-container {
-            padding: 20px 0px;
+            padding: 1rem 0rem;
             width: 100%;
             gap: 0.5em;
 
@@ -249,7 +251,7 @@
                 }
 
                 .user-box {
-                    padding: 0.7rem 0.2rem;
+                    padding: 0.8rem 0rem;
                     border-width: 1px;
                     align-content: flex-start;
 
@@ -257,7 +259,7 @@
                         @include rBesedaMobile;
                         
                         &.pravilna {
-                            border-color: transparent;
+                            // border-color: transparent;
                         }
                     }
                 }

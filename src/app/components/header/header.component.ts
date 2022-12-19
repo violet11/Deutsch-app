@@ -13,12 +13,14 @@ export class HeaderComponent {
   navClass = "navbar";
   links = links;
   title = "Willst du deutch lernen?";
+  mobileScreen = this.screenService.mobileScreen;
 
   constructor(private screenService: ScreenService) {}
 
+  hideTitle(page: any): boolean { return this.mobileScreen && !page.isActive; }
 
-  onClick() {
-    if (this.screenService.mobileScreen) {
+  onClick(): void {
+    if (this.mobileScreen) {
       !this.showMenu ?
         (this.burgerClass = "menu-btn_burger open",
         this.navClass = "navbar open",
@@ -27,7 +29,11 @@ export class HeaderComponent {
     }
   }
 
-  onTitleClick() {
+  headerClass(page: any): string {
+    return !page.isActive && this.mobileScreen ? "header border" : "header";
+  }
+
+  onTitleClick(): void {
     this.burgerClass = "menu-btn_burger";
     this.navClass = "navbar";
     this.showMenu = false;

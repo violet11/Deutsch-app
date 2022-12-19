@@ -11,9 +11,8 @@
         height: 1.2rem;
     }
 
-    .barvniKrog { 
-        height: 80px;
-        width: 80px;
+    .barvniKrog {
+        @include circle(5rem);
         border-radius: 50%;
         box-shadow: 15px 4px 10px -5px $shadowColor;
         border: 1px solid $shadowColor;
@@ -49,9 +48,8 @@
     .box {
         width: fit-content;
 
-        .barvniKrog { 
-            height: 5.9rem;
-            width: 5.9rem;
+        .barvniKrog {
+            @include circle(6rem);
         }
 
         .barveInput {

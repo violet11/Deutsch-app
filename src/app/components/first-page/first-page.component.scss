@@ -3,14 +3,11 @@
 
 .container {
     background: linear-gradient(to bottom, $primaryColor, $firstColor);
-}
-
-.home-container {
     height: 500px;
     @include flex-center;
     align-content: center;
-    gap: 6.5rem 3rem;
-    padding: 0rem 2.5rem;
+    gap: 6.5rem 4rem;
+    padding: 0rem 5rem;
 
     .btn {
         color: $activeColor;
@@ -30,14 +27,14 @@
 
 @media only screen and (max-width:450px) {
 
-    .home-container {
-        gap: 2.5rem 1.8rem;
-        padding: 17% 3%;
-        
+    .container {
+        gap: 3rem 2rem;
+        padding: 0rem;
+        height: 100vh;
+
         .btn {
-            font-size: 1rem;
-            padding: 0.7rem;
             font-weight: normal;
+            font-size: 1rem;
         }
     }
 }

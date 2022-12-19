@@ -12,20 +12,21 @@
 
     .barve-container {
         @include flex-center;
-        gap: 1.5rem 0rem;
+        gap: 2rem 0rem;
         flex-direction: column;
+        padding-block: 1.5rem;
     
         .box-mobile {
             @include flex-center;
             flex-wrap: nowrap;
-            gap: 1rem 0.5rem;
+            gap: 1rem 0.7rem;
             
             .box-barve {
                 padding: 0rem 1rem;
                 background-color: rgb(237, 237, 194);
                 border-radius: 5px;
-                width: 10rem;
-                height: 15rem;
+                width: 12rem;
+                height: 18rem;
                 box-shadow: 0px 0px 20px 10px $sixthColor;
                 border-radius: 10px;
 
@@ -40,13 +41,10 @@
                 color: $shadowColor;
                 cursor: pointer;
                 font-size: 1.5rem;
-                font-weight: bold;
-                width: 2rem;
-                height: 2rem;
-                border-radius: 50px;
                 border: 1px solid $shadowColor;
                 background-color: $activeColor;
-                padding: 0px;
+                padding: 0.4rem;
+                @include circle(2.2rem);
                 @include transition-ease;
 
                 &:hover {

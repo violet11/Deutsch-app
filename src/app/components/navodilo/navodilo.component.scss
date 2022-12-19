@@ -2,29 +2,33 @@
 @import '../../../scss/_config.scss';
 
 
-    .navodilo { 
-        width: 18rem;
+.start-navodilo {
+    width: 18rem;
 
-        h4 {
-            font-size: 1.7rem;
-            font-family: "Cabin_SemiCondensed-Regular";
-            color: black;
-            font-weight: bold;
-            line-height: 2rem;
-        }
+    h4 {
+        font-size: 1.7rem;
+        font-family: "Cabin_SemiCondensed-Regular";
+        color: black;
+        font-weight: bold;
+        line-height: 2rem;
     }
+
+    .gumbi {
+        padding-block-start: 1rem;
+    }
+}
 
 @media only screen and (max-width:450px) {
 
-    .navodilo { 
-        width: 90%;
-        margin: auto;
+    :host {
         height: 100vh;
+        
+        .start-navodilo { 
+            margin: auto;
 
-        h4 {
-            font-size: 1.4em;
-            font-weight: 400;
-            line-height: 1.4rem;
+            h4 {
+                font-size: 1.5rem;
+            }
         }
     }
 }
