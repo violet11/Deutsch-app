@@ -64,12 +64,16 @@ header {
 
     header {
         height: 3.2rem;
+        position: fixed;
+        width: 100%;
+        z-index: 1;
 
         &.border {
-            border: none;
+            border-bottom: none;
         }
 
         .top_header {
+            padding: 0rem;
 
             .title {
                 position: absolute;
@@ -160,10 +164,10 @@ header {
             .nav a {
                 font-size: 1rem;
                 line-height: 1.4rem;
+                width: fit-content;
             }
 
             &.open {
-                position: fixed;
                 z-index: 1;
                 display: block;
                 background-color: $primaryColor;

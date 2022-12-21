@@ -174,7 +174,9 @@
         height: fit-content;
 
         .main-box {
-            height: 12rem;
+            height: 14rem;
+            align-items: flex-end;
+            padding-block-end: 2rem;
 
             .container-random {
                 grid-template-columns: repeat(3, 1fr);
@@ -205,7 +207,7 @@
             }
             
             .aside {
-                top: -4.4rem;
+                top: -1rem;
                 right: auto;
                 flex-direction: row-reverse;
                 flex-wrap: nowrap;
@@ -258,9 +260,9 @@
                     .user-beseda {
                         @include rBesedaMobile;
                         
-                        &.pravilna {
-                            // border-color: transparent;
-                        }
+                        // &.pravilna {
+                        //     background-color: pink;
+                        // }
                     }
                 }
             }
