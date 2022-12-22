@@ -171,7 +171,6 @@
 
 @media only screen and (max-width:450px) {
     .container {
-        height: fit-content;
 
         .main-box {
             height: 14rem;
@@ -261,7 +260,6 @@
                         @include rBesedaMobile;
                         
                         // &.pravilna {
-                        //     background-color: pink;
                         // }
                     }
                 }

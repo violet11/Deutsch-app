@@ -20,9 +20,6 @@
 
 @media only screen and (max-width:450px) {
 
-    :host {
-        height: 100vh;
-        
         .start-navodilo { 
             margin: auto;
 
@@ -30,5 +27,4 @@
                 font-size: 1.5rem;
             }
         }
-    }
 }
