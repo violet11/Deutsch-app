@@ -116,10 +116,9 @@ header {
     
             &_burger {
                 position: absolute;
-                top: 0.5rem;
                 width: 25px;
                 height: 2px;
-                background-color: $secondColor;
+                background-color: yellow;
                 @include transition-ease;
     
                 &::before {
@@ -151,7 +150,7 @@ header {
                     }
     
                     &::after {
-                        transform: rotate(-45deg) translate(2.7px, -7.4px);
+                        transform: rotate(-45deg) translate(3px, -7.7px);
                     }
                 }
             }
