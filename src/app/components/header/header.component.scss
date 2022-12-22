@@ -107,8 +107,6 @@ header {
             z-index: 1;
             cursor: pointer;
             @include transition-ease;
-            background-color: pink;
-            border: 2px solid green;
 
             p {
                 color: gray;
@@ -118,7 +116,7 @@ header {
                 position: absolute;
                 width: 25px;
                 height: 2px;
-                background-color: yellow;
+                background-color: $secondColor;
                 @include transition-ease;
     
                 &::before {
